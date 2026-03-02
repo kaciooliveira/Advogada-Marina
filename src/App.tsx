@@ -143,7 +143,7 @@ export default function App() {
           rel="noopener noreferrer"
           className="bg-gold text-white px-6 py-2 rounded-full text-sm font-bold hover:scale-105 transition-transform active:scale-95"
         >
-          CONSULTE AGORA
+          CONSULTE AGORA!
         </a>
       </header>
 
@@ -199,7 +199,7 @@ export default function App() {
           {[...Array(10)].map((_, i) => (
             <div key={i} className="flex items-center gap-4 opacity-30 grayscale hover:opacity-100 hover:grayscale-0 transition-all cursor-default">
               <Award className="w-6 h-6 text-gold" />
-              <span className="text-2xl font-display italic">+ 10 Anos de Experiência Jurídica</span>
+              <span className="text-2xl font-display italic">+ 15 Anos de Experiência Jurídica</span>
               <div className="w-2 h-2 rounded-full bg-gold/50"></div>
               <span className="text-2xl font-display italic">Especialista em Conflitos Complexos</span>
               <div className="w-2 h-2 rounded-full bg-gold/50"></div>
@@ -216,7 +216,7 @@ export default function App() {
               Uma abordagem técnica <br/><span className="italic text-gold">voltada à realidade masculina</span>
             </h2>
           </div>
-          <p className="text-slate-400 max-w-sm text-sm leading-relaxed">
+          <p className="text-slate-700 max-w-sm text-sm leading-relaxed">
             A prática forense demonstra que há diferenças relevantes na condução processual conforme o gênero. Minha advocacia garante o equilíbrio necessário.
           </p>
         </div>
@@ -264,7 +264,7 @@ export default function App() {
           {/* Card 4: Small */}
           <div className="glass rounded-3xl p-8 flex flex-col justify-center items-center text-center hover:bg-gold/5 transition-colors">
             <span className="text-4xl font-display text-gold mb-2">+ 10</span>
-            <span className="text-xs uppercase tracking-widest text-slate-400">Anos de Carreira</span>
+            <span className="text-xs uppercase tracking-widest text-slate-400">Anos de Advocacia</span>
           </div>
         </div>
       </section>
@@ -302,7 +302,7 @@ export default function App() {
                   Meu nome é <span className="text-slate-900 font-medium">Marina Araújo</span>, sou advogada há mais de 10 anos e atuo na defesa exclusiva de homens em processos de Direito de Família.
                 </p>
                 <p>
-                  Entrei no mercado de trabalho em 2011 e acumulo <span className="text-gold font-medium">15 anos de experiência jurídica</span>.
+                  Trabalho na área desde 2011 e acumulo <span className="text-gold font-medium">15 anos de experiência jurídica</span>.
                 </p>
                 <p>
                   Ao longo dessa trajetória, construí uma atuação sólida, com condução técnica e planejamento jurídico personalizado, voltado especialmente a conflitos familiares complexos ligados à realidade masculina.
@@ -432,7 +432,7 @@ export default function App() {
             <div className="absolute inset-0 bg-gold/5"></div>
             <div className="relative z-10">
               <p className="text-xl md:text-2xl font-display mb-8 leading-relaxed">
-                Procurando a <strong>melhor advogada para pais em Goiânia especializada em guarda</strong> e defesa do homem?
+                Está procurando uma advogada especialista na defesa de homens e pais em Goiânia? Clique no botão abaixo e fale agora com a Dra. Marina Araújo!
               </p>
               <a 
                 href="https://api.whatsapp.com/send/?phone=5562982248520&text&type=phone_number&app_absent=0" 
@@ -454,7 +454,7 @@ export default function App() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <span className="text-gold text-xs font-bold tracking-widest uppercase mb-4 block">Localização</span>
-              <h2 className="text-4xl md:text-5xl font-display mb-6">Nosso Escritório</h2>
+              <h2 className="text-4xl md:text-5xl font-display mb-6">Araújo Advocacia</h2>
               <p className="text-slate-600 text-lg mb-8 leading-relaxed">
                 Estamos localizados em uma região estratégica para oferecer o melhor atendimento e suporte jurídico aos nossos clientes.
               </p>
