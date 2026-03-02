@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { 
@@ -13,6 +13,7 @@ import {
   Users, 
   FileText, 
   ChevronRight, 
+  ChevronDown,
   Menu, 
   X,
   ArrowRight,
@@ -25,6 +26,47 @@ gsap.registerPlugin(ScrollTrigger);
 export default function App() {
   const heroRef = useRef<HTMLDivElement>(null);
   const sectionsRef = useRef<HTMLDivElement>(null);
+
+  const [activeFaq, setActiveFaq] = useState<number | null>(null);
+
+  const faqs = [
+    {
+      question: "1. Estou em processo de separação. Quais são os direitos do pai no divórcio com partilha de bens em Goiânia?",
+      answer: "No divórcio, o homem tem direito à preservação do seu patrimônio conforme o regime de bens adotado. Atuamos para garantir que a divisão seja justa, protegendo investimentos, imóveis e empresas, além de assegurar que os direitos do pai no divórcio com partilha de bens em Goiânia sejam respeitados desde o primeiro dia da separação."
+    },
+    {
+      question: "2. Fui acusado falsamente de agressão durante o divórcio. O que fazer?",
+      answer: "Infelizmente, essa é uma estratégia comum para forçar o afastamento do homem do lar e dos filhos. A defesa contra falsa acusação de agressão no divórcio deve ser técnica e imediata, reunindo provas de álibi, histórico de mensagens e conduta para reestabelecer a verdade perante o juiz e evitar medidas protetivas injustas."
+    },
+    {
+      question: "3. Fui demitido ou minha renda caiu. O pai pode pedir revisão de pensão alimentícia por desemprego?",
+      answer: "Sim. A lei permite o ajuste quando há mudança na situação financeira. Se sua capacidade de pagamento diminuiu, você pode pedir revisão de pensão alimentícia por desemprego para que o valor seja readequado à sua realidade atual, evitando dívidas impagáveis e o risco de prisão civil."
+    },
+    {
+      question: "4. Como reduzir o valor de uma pensão alimentícia fixada acima da minha capacidade real?",
+      answer: "Muitos homens pagam valores que comprometem sua própria sobrevivência por erro de cálculo judicial. O foco da nossa atuação é demonstrar tecnicamente como reduzir valor de pensão alimentícia fixada acima da capacidade, apresentando seus gastos fixos e rendimentos reais para equilibrar o binômio necessidade/possibilidade."
+    },
+    {
+      question: "5. Meu filho já é maior de idade. A pensão para de ser paga automaticamente?",
+      answer: "Não. O cancelamento não acontece de forma automática aos 18 anos. É fundamental ingressar com uma ação de exoneração de pensão alimentícia para filho maior de 18 anos, comprovando que ele já possui meios de subsistência ou não está matriculado em instituição de ensino, encerrando formalmente a obrigação."
+    },
+    {
+      question: "6. É possível estabelecer a guarda compartilhada com residência fixa no pai em Goiás?",
+      answer: "Com certeza. A justiça moderna entende que o pai é tão capaz quanto a mãe para a rotina do filho. É plenamente viável buscar a guarda compartilhada com residência fixa no pai em Goiás, desde que comprovado que o ambiente paterno oferece as melhores condições para o desenvolvimento e bem-estar da criança."
+    },
+    {
+      question: "7. O que fazer quando a mãe alienadora impede as visitas ou o convívio?",
+      answer: "O impedimento injustificado de visitas é uma forma de violência psicológica. Orientamos sobre o que fazer quando a mãe alienadora impede as visitas, utilizando medidas judiciais urgentes que podem incluir multas diárias, busca e apreensão de menores e até a alteração da guarda em favor do pai."
+    },
+    {
+      question: "8. Como provar alienação parental contra o pai em Goiânia?",
+      answer: "A prova da alienação exige perícia técnica e sensibilidade jurídica. Para saber como provar alienação parental contra o pai em Goiânia, reunimos registros de mensagens, áudios, depoimentos de testemunhas e solicitamos a intervenção da equipe psicossocial do TJGO para identificar e punir a manipulação afetiva."
+    },
+    {
+      question: "9. O pai pode viajar com filho sem autorização da mãe em guarda compartilhada?",
+      answer: "Em viagens dentro do território nacional, se o pai detém a guarda (ainda que compartilhada), ele pode viajar com filho sem autorização da mãe. Já para viagens internacionais, a autorização de ambos os pais é necessária, a menos que exista uma autorização judicial específica já averbada no passaporte do menor."
+    }
+  ];
 
   useEffect(() => {
     // Hero Entrance Animation
@@ -87,7 +129,7 @@ export default function App() {
           rel="noopener noreferrer"
           className="bg-gold text-white px-6 py-2 rounded-full text-sm font-bold hover:scale-105 transition-transform active:scale-95"
         >
-          CONSULTA AGORA
+          CONSULTE AGORA
         </a>
       </header>
 
@@ -108,7 +150,7 @@ export default function App() {
             Pioneira em Goiás
           </span>
           <h1 className="text-5xl md:text-8xl font-display font-medium leading-[0.9] mb-8 tracking-tighter text-gradient">
-            Atuação estratégica em Direito de família para homens.
+            Atuação estratégica em Direito de família para homens
           </h1>
           <p className="text-lg md:text-xl text-slate-700 font-medium max-w-3xl mx-auto mb-10 leading-relaxed">
             Advocacia especializada na defesa de homens e pais em conflitos familiares.
@@ -195,7 +237,7 @@ export default function App() {
             </div>
             <div>
               <h4 className="text-xl font-display mb-1">Pioneirismo em Goiás</h4>
-              <p className="text-sm text-slate-400">Primeira E única advogada do estado a se posicionar publicamente na defesa exclusiva de homens e dos pais.</p>
+              <p className="text-sm text-slate-400">Primeira e única advogada do Estado a se posicionar publicamente na defesa exclusiva de homens e dos pais.</p>
             </div>
           </div>
 
@@ -249,7 +291,7 @@ export default function App() {
                   Entrei no mercado de trabalho em 2011 e acumulo <span className="text-gold font-medium">15 anos de experiência jurídica</span>.
                 </p>
                 <p>
-                  Ao longo dessa trajetória, construí uma atuação sólida, com condução técnica e planejamento jurídico personalizado, voltada especialmente a conflitos familiares complexos ligados à realidade masculina.
+                  Ao longo dessa trajetória, construí uma atuação sólida, com condução técnica e planejamento jurídico personalizado, voltado especialmente a conflitos familiares complexos ligados à realidade masculina.
                 </p>
                 <p className="bg-gold/5 border-l-2 border-gold p-6 italic">
                   Sou pioneira no Estado de Goiás ao me posicionar publicamente na defesa exclusiva de homens no Direito de Família.
@@ -330,6 +372,123 @@ export default function App() {
               AGENDAR CONSULTA VIA WHATSAPP
               <ArrowRight className="w-6 h-6" />
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-24 px-6 reveal bg-white">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-display mb-6">Dúvidas Frequentes:</h2>
+            <div className="w-20 h-1 bg-gold mx-auto rounded-full"></div>
+          </div>
+
+          <div className="space-y-4">
+            {faqs.map((faq, index) => (
+              <div 
+                key={index} 
+                className={`border border-slate-100 rounded-2xl overflow-hidden transition-all duration-300 ${activeFaq === index ? 'bg-slate-50 shadow-sm' : 'bg-white'}`}
+              >
+                <button 
+                  onClick={() => setActiveFaq(activeFaq === index ? null : index)}
+                  className="w-full px-8 py-6 text-left flex justify-between items-center gap-4 group"
+                >
+                  <span className={`font-bold text-lg transition-colors ${activeFaq === index ? 'text-gold' : 'text-slate-900 group-hover:text-gold'}`}>
+                    {faq.question}
+                  </span>
+                  <ChevronDown className={`w-5 h-5 shrink-0 transition-transform duration-300 ${activeFaq === index ? 'rotate-180 text-gold' : 'text-slate-400'}`} />
+                </button>
+                <div 
+                  className={`overflow-hidden transition-all duration-300 ease-in-out ${activeFaq === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}
+                >
+                  <div className="px-8 pb-8 text-slate-600 leading-relaxed">
+                    <p className="border-t border-slate-100 pt-6">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-20 p-10 bg-slate-900 rounded-[2.5rem] text-center text-white relative overflow-hidden">
+            <div className="absolute inset-0 bg-gold/5"></div>
+            <div className="relative z-10">
+              <p className="text-xl md:text-2xl font-display mb-8 leading-relaxed">
+                Procurando a melhor advogada para pais em Goiânia especializada em guarda e defesa do homem? Clique no botão abaixo e fale agora com a Dra. Marina.
+              </p>
+              <a 
+                href="https://api.whatsapp.com/send/?phone=5562982248520&text&type=phone_number&app_absent=0" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-gold text-white px-10 py-5 rounded-full text-lg font-bold hover:scale-105 transition-transform shadow-xl shadow-gold/20"
+              >
+                FALE COM A DRA. MARINA ARAÚJO
+                <ArrowRight className="w-5 h-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Office Section */}
+      <section className="py-24 px-6 reveal bg-slate-50/30">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <span className="text-gold text-xs font-bold tracking-widest uppercase mb-4 block">Localização</span>
+              <h2 className="text-4xl md:text-5xl font-display mb-6">Nosso Escritório</h2>
+              <p className="text-slate-600 text-lg mb-8 leading-relaxed">
+                Estamos localizados em uma região estratégica para oferecer o melhor atendimento e suporte jurídico aos nossos clientes.
+              </p>
+              
+              <div className="space-y-6">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center shrink-0">
+                    <Scale className="text-gold w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900">Endereço</h4>
+                    <p className="text-slate-600">Rua 103, N° 268, Setor Sul<br />CEP: 74080-200 | Goiânia - GO</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gold/10 rounded-xl flex items-center justify-center shrink-0">
+                    <Award className="text-gold w-6 h-6" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-slate-900">Atendimento</h4>
+                    <p className="text-slate-600">Segunda a Sexta: 08h às 18h</p>
+                  </div>
+                </div>
+              </div>
+
+              <div className="mt-10">
+                <a 
+                  href="https://www.google.com/maps/search/?api=1&query=Rua+103,+268,+Setor+Sul,+Goiânia+-+GO,+74080-200"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-gold font-bold uppercase tracking-widest text-sm hover:gap-4 transition-all"
+                >
+                  Ver no Google Maps <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+
+            <div className="h-[450px] rounded-3xl overflow-hidden border border-slate-200 shadow-xl grayscale hover:grayscale-0 transition-all duration-700">
+              <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3821.467471675123!2d-49.2562145!3d-16.6917631!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x935ef1466085a5a1%3A0x8f2d5f8f8f8f8f8f!2sRua%20103%2C%20268%20-%20St.%20Sul%2C%20Goi%C3%A2nia%20-%20GO%2C%2074080-200!5e0!3m2!1spt-BR!2sbr!4v1709565000000!5m2!1spt-BR!2sbr" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Localização Marina Araújo Advocacia"
+              ></iframe>
+            </div>
           </div>
         </div>
       </section>
