@@ -120,7 +120,7 @@ export default function App() {
               rel="noopener noreferrer"
               className="w-full md:w-auto bg-gold text-white px-10 py-5 rounded-full text-lg font-bold flex items-center justify-center gap-2 hover:bg-slate-900 transition-colors group"
             >
-              FALAR COM A DRA. MARINA ARAUJO
+              FALE COM A DRA. MARINA ARAÚJO
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </a>
             <div className="flex items-center gap-4 px-6 py-4 glass rounded-full">
@@ -195,13 +195,13 @@ export default function App() {
             </div>
             <div>
               <h4 className="text-xl font-display mb-1">Pioneirismo em Goiás</h4>
-              <p className="text-sm text-slate-400">Primeira e única advogada do estado a se posicionar publicamente na defesa exclusiva de homens e dos pais.</p>
+              <p className="text-sm text-slate-400">Primeira E única advogada do estado a se posicionar publicamente na defesa exclusiva de homens e dos pais.</p>
             </div>
           </div>
 
           {/* Card 3: Small */}
           <div className="glass rounded-3xl p-8 flex flex-col justify-center items-center text-center hover:bg-gold/5 transition-colors">
-            <span className="text-4xl font-display text-gold mb-2">200+</span>
+            <span className="text-4xl font-display text-gold mb-2">+ 200</span>
             <span className="text-xs uppercase tracking-widest text-slate-400">Conflitos Solucionados</span>
           </div>
 
@@ -319,7 +319,7 @@ export default function App() {
               Proteja seu futuro e <br/>o <span className="text-gold italic">seu direito de ser pai</span>
             </h2>
             <p className="text-lg text-slate-500 mb-12 max-w-2xl mx-auto">
-              Não deixe que a falta de uma estratégia especializada comprometa seus direitos. Agende uma consulta técnica e personalizada hoje mesmo.
+              Não deixe que a falta de uma estratégia especializada comprometa seus direitos. Agende uma consulta técnica e personalizada hoje mesmo!
             </p>
             <a 
               href="https://api.whatsapp.com/send/?phone=5562982248520&text&type=phone_number&app_absent=0" 
