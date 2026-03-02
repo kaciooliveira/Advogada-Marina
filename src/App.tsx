@@ -31,42 +31,55 @@ export default function App() {
 
   const faqs = [
     {
-      question: "1. Estou em processo de separação. Quais são os direitos do pai no divórcio com partilha de bens em Goiânia?",
+      question: "Quais são os direitos do pai no divórcio com partilha de bens em Goiânia?",
       answer: "No divórcio, o homem tem direito à preservação do seu patrimônio conforme o regime de bens adotado. Atuamos para garantir que a divisão seja justa, protegendo investimentos, imóveis e empresas, além de assegurar que os direitos do pai no divórcio com partilha de bens em Goiânia sejam respeitados desde o primeiro dia da separação."
     },
     {
-      question: "2. Fui acusado falsamente de agressão durante o divórcio. O que fazer?",
-      answer: "Infelizmente, essa é uma estratégia comum para forçar o afastamento do homem do lar e dos filhos. A defesa contra falsa acusação de agressão no divórcio deve ser técnica e imediata, reunindo provas de álibi, histórico de mensagens e conduta para reestabelecer a verdade perante o juiz e evitar medidas protetivas injustas."
+      question: "Fui acusado falsamente de agressão durante o divórcio. O que fazer?",
+      answer: "A defesa contra falsa acusação de agressão no divórcio deve ser técnica e imediata, reunindo provas de álibi e histórico de mensagens para reestabelecer a verdade perante o juiz e evitar medidas protetivas injustas."
     },
     {
-      question: "3. Fui demitido ou minha renda caiu. O pai pode pedir revisão de pensão alimentícia por desemprego?",
-      answer: "Sim. A lei permite o ajuste quando há mudança na situação financeira. Se sua capacidade de pagamento diminuiu, você pode pedir revisão de pensão alimentícia por desemprego para que o valor seja readequado à sua realidade atual, evitando dívidas impagáveis e o risco de prisão civil."
+      question: "O pai pode pedir revisão de pensão alimentícia por desemprego?",
+      answer: "Sim. Se sua capacidade financeira mudou, você pode pedir revisão de pensão alimentícia por desemprego para que o juiz ajuste o valor à sua nova realidade, evitando dívidas e o risco de prisão."
     },
     {
-      question: "4. Como reduzir o valor de uma pensão alimentícia fixada acima da minha capacidade real?",
-      answer: "Muitos homens pagam valores que comprometem sua própria sobrevivência por erro de cálculo judicial. O foco da nossa atuação é demonstrar tecnicamente como reduzir valor de pensão alimentícia fixada acima da capacidade, apresentando seus gastos fixos e rendimentos reais para equilibrar o binômio necessidade/possibilidade."
+      question: "Como reduzir valor de pensão alimentícia fixada acima da capacidade?",
+      answer: "Atuamos demonstrando tecnicamente como reduzir valor de pensão alimentícia fixada acima da capacidade, apresentando gastos fixos e rendimentos reais para equilibrar o binômio necessidade/possibilidade."
     },
     {
-      question: "5. Meu filho já é maior de idade. A pensão para de ser paga automaticamente?",
-      answer: "Não. O cancelamento não acontece de forma automática aos 18 anos. É fundamental ingressar com uma ação de exoneração de pensão alimentícia para filho maior de 18 anos, comprovando que ele já possui meios de subsistência ou não está matriculado em instituição de ensino, encerrando formalmente a obrigação."
+      question: "Pensão de filho maior de 18 anos para de ser paga automaticamente?",
+      answer: "Não. É necessário ingressar com uma ação de exoneração de pensão alimentícia para filho maior de 18 anos, comprovando que ele possui meios de subsistência ou não está estudando."
     },
     {
-      question: "6. É possível estabelecer a guarda compartilhada com residência fixa no pai em Goiás?",
-      answer: "Com certeza. A justiça moderna entende que o pai é tão capaz quanto a mãe para a rotina do filho. É plenamente viável buscar a guarda compartilhada com residência fixa no pai em Goiás, desde que comprovado que o ambiente paterno oferece as melhores condições para o desenvolvimento e bem-estar da criança."
+      question: "É possível guarda compartilhada com residência fixa no pai em Goiás?",
+      answer: "Sim. É plenamente viável estabelecer a guarda compartilhada com residência fixa no pai em Goiás, desde que comprovado que o ambiente paterno oferece as melhores condições para a criança."
     },
     {
-      question: "7. O que fazer quando a mãe alienadora impede as visitas ou o convívio?",
-      answer: "O impedimento injustificado de visitas é uma forma de violência psicológica. Orientamos sobre o que fazer quando a mãe alienadora impede as visitas, utilizando medidas judiciais urgentes que podem incluir multas diárias, busca e apreensão de menores e até a alteração da guarda em favor do pai."
+      question: "O que fazer quando a mãe alienadora impede as visitas?",
+      answer: "Utilizamos medidas judiciais urgentes contra a mãe alienadora, que podem incluir multas diárias, busca e apreensão de menores e até a alteração da guarda em favor do pai."
     },
     {
-      question: "8. Como provar alienação parental contra o pai em Goiânia?",
-      answer: "A prova da alienação exige perícia técnica e sensibilidade jurídica. Para saber como provar alienação parental contra o pai em Goiânia, reunimos registros de mensagens, áudios, depoimentos de testemunhas e solicitamos a intervenção da equipe psicossocial do TJGO para identificar e punir a manipulação afetiva."
+      question: "Como provar alienação parental contra o pai em Goiânia?",
+      answer: "Para saber como provar alienação parental contra o pai em Goiânia, reunimos registros de mensagens, áudios e solicitamos a intervenção da equipe psicossocial do TJGO."
     },
     {
-      question: "9. O pai pode viajar com filho sem autorização da mãe em guarda compartilhada?",
-      answer: "Em viagens dentro do território nacional, se o pai detém a guarda (ainda que compartilhada), ele pode viajar com filho sem autorização da mãe. Já para viagens internacionais, a autorização de ambos os pais é necessária, a menos que exista uma autorização judicial específica já averbada no passaporte do menor."
+      question: "O pai pode viajar com filho sem autorização da mãe?",
+      answer: "Em viagens nacionais, o pai com guarda compartilhada pode viajar sem autorização da mãe. Para viagens internacionais, a autorização de ambos os pais é obrigatória, salvo decisão judicial."
     }
   ];
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
 
   useEffect(() => {
     // Hero Entrance Animation
@@ -119,7 +132,8 @@ export default function App() {
         
         <nav className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest text-slate-600">
           <a href="#sobre" className="hover:text-gold transition-colors">Sobre</a>
-          <a href="#servicos" className="hover:text-gold transition-colors">Serviços</a>
+          <a href="#servicos" className="hover:text-gold transition-colors">A Advogada</a>
+          <a href="#seus-direitos" className="hover:text-gold transition-colors">Seus Direitos</a>
           <a href="#contato" className="hover:text-gold transition-colors">Contato</a>
         </nav>
 
@@ -195,7 +209,7 @@ export default function App() {
       </div>
 
       {/* Diferenciais (Bento Grid) */}
-      <section className="py-16 md:py-32 px-6 md:px-12 max-w-7xl mx-auto reveal">
+      <section id="sobre" className="py-16 md:py-32 px-6 md:px-12 max-w-7xl mx-auto reveal">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
           <div className="max-w-2xl">
             <h2 className="text-4xl md:text-6xl font-display mb-6 leading-tight">
@@ -322,18 +336,15 @@ export default function App() {
           {[
             {
               text: "A Dra. Marina foi fundamental para que eu pudesse manter o convívio com meus filhos. Sua abordagem técnica fez toda a diferença no processo.",
-              author: "R. Silva",
-              role: "Empresário"
+              author: "R. Silva"
             },
             {
               text: "Excelente profissional. Estratégica, direta e muito segura. Recomendo para qualquer homem que esteja passando por um divórcio complexo.",
-              author: "M. Oliveira",
-              role: "Engenheiro"
+              author: "M. Oliveira"
             },
             {
               text: "Finalmente encontrei alguém que entende as dificuldades que nós homens enfrentamos no judiciário de família. Trabalho impecável.",
-              author: "A. Santos",
-              role: "Médico"
+              author: "A. Santos"
             }
           ].map((item, i) => (
             <div key={i} className="glass p-10 rounded-3xl flex flex-col justify-between hover:-translate-y-2 transition-transform duration-500">
@@ -344,7 +355,6 @@ export default function App() {
                 </div>
                 <div>
                   <p className="text-sm font-bold text-slate-900">{item.author}</p>
-                  <p className="text-xs text-slate-400 uppercase tracking-widest">{item.role}</p>
                 </div>
               </div>
             </div>
@@ -377,10 +387,14 @@ export default function App() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-24 px-6 reveal bg-white">
+      <section id="seus-direitos" className="py-24 px-6 reveal bg-white">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-display mb-6">Dúvidas Frequentes:</h2>
+            <h2 className="text-4xl md:text-5xl font-display mb-6 text-slate-900">Dúvidas Frequentes: Seus Direitos como Homem e Pai</h2>
             <div className="w-20 h-1 bg-gold mx-auto rounded-full"></div>
           </div>
 
@@ -388,21 +402,23 @@ export default function App() {
             {faqs.map((faq, index) => (
               <div 
                 key={index} 
-                className={`border border-slate-100 rounded-2xl overflow-hidden transition-all duration-300 ${activeFaq === index ? 'bg-slate-50 shadow-sm' : 'bg-white'}`}
+                className={`border border-slate-200 rounded-2xl overflow-hidden transition-all duration-300 ${activeFaq === index ? 'bg-slate-50 shadow-md border-gold/30' : 'bg-white hover:border-gold/20'}`}
               >
                 <button 
                   onClick={() => setActiveFaq(activeFaq === index ? null : index)}
-                  className="w-full px-8 py-6 text-left flex justify-between items-center gap-4 group"
+                  className="w-full px-6 md:px-8 py-6 text-left flex justify-between items-center gap-4 group"
                 >
-                  <span className={`font-bold text-lg transition-colors ${activeFaq === index ? 'text-gold' : 'text-slate-900 group-hover:text-gold'}`}>
+                  <span className={`font-bold text-base md:text-lg transition-colors ${activeFaq === index ? 'text-gold' : 'text-slate-900 group-hover:text-gold'}`}>
                     {faq.question}
                   </span>
-                  <ChevronDown className={`w-5 h-5 shrink-0 transition-transform duration-300 ${activeFaq === index ? 'rotate-180 text-gold' : 'text-slate-400'}`} />
+                  <div className={`w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${activeFaq === index ? 'bg-gold text-white rotate-180' : 'bg-slate-100 text-slate-400 group-hover:bg-gold/10 group-hover:text-gold'}`}>
+                    <ChevronDown className="w-5 h-5" />
+                  </div>
                 </button>
                 <div 
-                  className={`overflow-hidden transition-all duration-300 ease-in-out ${activeFaq === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}
+                  className={`overflow-hidden transition-all duration-500 ease-in-out ${activeFaq === index ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'}`}
                 >
-                  <div className="px-8 pb-8 text-slate-600 leading-relaxed">
+                  <div className="px-6 md:px-8 pb-8 text-slate-600 leading-relaxed text-sm md:text-base">
                     <p className="border-t border-slate-100 pt-6">
                       {faq.answer}
                     </p>
@@ -412,19 +428,19 @@ export default function App() {
             ))}
           </div>
 
-          <div className="mt-20 p-10 bg-slate-900 rounded-[2.5rem] text-center text-white relative overflow-hidden">
+          <div className="mt-20 p-8 md:p-12 bg-slate-900 rounded-[2.5rem] text-center text-white relative overflow-hidden shadow-2xl">
             <div className="absolute inset-0 bg-gold/5"></div>
             <div className="relative z-10">
               <p className="text-xl md:text-2xl font-display mb-8 leading-relaxed">
-                Procurando a melhor advogada para pais em Goiânia especializada em guarda e defesa do homem? Clique no botão abaixo e fale agora com a Dra. Marina.
+                Procurando a <strong>melhor advogada para pais em Goiânia especializada em guarda</strong> e defesa do homem?
               </p>
               <a 
                 href="https://api.whatsapp.com/send/?phone=5562982248520&text&type=phone_number&app_absent=0" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 bg-gold text-white px-10 py-5 rounded-full text-lg font-bold hover:scale-105 transition-transform shadow-xl shadow-gold/20"
+                className="inline-flex items-center gap-3 bg-[#25d366] text-white px-8 md:px-10 py-4 md:py-5 rounded-full text-lg font-bold hover:scale-105 transition-transform shadow-xl shadow-green-500/20"
               >
-                FALE COM A DRA. MARINA ARAÚJO
+                Agendar Consulta com a Dra. Marina
                 <ArrowRight className="w-5 h-5" />
               </a>
             </div>
