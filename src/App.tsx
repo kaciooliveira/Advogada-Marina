@@ -18,7 +18,10 @@ import {
   X,
   ArrowRight,
   CheckCircle2,
-  Award
+  Award,
+  Instagram,
+  MessageCircle,
+  Linkedin
 } from 'lucide-react';
 
 gsap.registerPlugin(ScrollTrigger);
@@ -164,7 +167,7 @@ export default function App() {
             Pioneira em Goiás
           </span>
           <h1 className="text-5xl md:text-8xl font-display font-medium leading-[0.9] mb-8 tracking-tighter text-gradient">
-            Atuação estratégica em Direito de família para homens
+            Atuação estratégica em Direito de Família para homens
           </h1>
           <p className="text-lg md:text-xl text-slate-700 font-medium max-w-3xl mx-auto mb-10 leading-relaxed">
             Advocacia especializada na defesa de homens e pais em conflitos familiares.
@@ -314,7 +317,7 @@ export default function App() {
 
               <div className="mt-12 flex flex-wrap gap-4">
                 <div className="glass px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest text-gold">
-                  OAB/GO Especialista
+                  OAB/GO 45.368
                 </div>
                 <div className="glass px-6 py-3 rounded-full text-xs font-bold uppercase tracking-widest text-gold">
                   Pioneira em Defesa Masculina
@@ -440,7 +443,7 @@ export default function App() {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-[#25d366] text-white px-8 md:px-10 py-4 md:py-5 rounded-full text-lg font-bold hover:scale-105 transition-transform shadow-xl shadow-green-500/20"
               >
-                Agendar Consulta com a Dra. Marina
+                Agendar Consulta com a Dra. Marina Araújo
                 <ArrowRight className="w-5 h-5" />
               </a>
             </div>
@@ -512,18 +515,66 @@ export default function App() {
       {/* Footer */}
       <footer className="py-12 px-6 border-t border-slate-100">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="flex items-center gap-2">
-            <Scale className="text-gold w-5 h-5" />
-            <span className="font-display text-lg font-bold tracking-tighter text-slate-900">MARINA ARAÚJO</span>
+          <div className="flex items-center gap-3">
+            <Scale className="text-gold w-6 h-6" />
+            <div className="flex flex-col">
+              <span className="font-display text-lg font-bold tracking-tighter text-slate-900 leading-tight">MARINA ARAÚJO</span>
+              <span className="text-[11px] font-bold text-slate-400 tracking-[0.15em]">62 9 8224-8520</span>
+            </div>
           </div>
           
           <p className="text-slate-300 text-xs tracking-widest uppercase">
             © 2026 Marina Araújo Advocacia. Todos os direitos reservados.
           </p>
 
-          <div className="flex gap-6 text-slate-400 text-xs uppercase tracking-widest">
-            <a href="#" className="hover:text-gold transition-colors">Privacidade</a>
-            <a href="#" className="hover:text-gold transition-colors">Termos</a>
+          <div className="flex gap-6 items-center">
+            <a 
+              href="https://api.whatsapp.com/send/?phone=5562982248520&text&type=phone_number&app_absent=0" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-gold transition-colors"
+              aria-label="WhatsApp"
+            >
+              <MessageCircle className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://www.instagram.com/adv.marinaaraujo?igsh=MTFhNm4ybTMzbXVsNQ==" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-gold transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/marina-ara%C3%BAjo-mamboungou-60a251184/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-gold transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-5 h-5" />
+            </a>
+            <a 
+              href="https://www.tiktok.com/@user345865999643?_r=1&_t=ZS-94McoT18U7w" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-slate-400 hover:text-gold transition-colors"
+              aria-label="TikTok"
+            >
+              <svg 
+                viewBox="0 0 24 24" 
+                className="w-5 h-5 fill-current"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.17-2.89-.6-4.13-1.47-.13-.08-.26-.17-.38-.25v7.39c.01 1.54-.2 3.13-.9 4.51-.66 1.34-1.74 2.5-3.09 3.19-1.35.7-2.91.93-4.39.82-1.48-.11-2.94-.61-4.13-1.51-1.2-1.01-2.1-2.41-2.51-3.89-.41-1.48-.36-3.09.12-4.53.48-1.44 1.44-2.7 2.69-3.53 1.25-.84 2.81-1.26 4.31-1.18.15 0 .3 0 .45.03v4.04c-.45-.08-.91-.1-1.36-.04-.45.06-.9.22-1.28.47-.38.25-.69.61-.88 1.03-.19.42-.25.89-.18 1.35.07.46.26.9.56 1.25.3.35.7.61 1.14.75.44.14.91.15 1.36.03.45-.12.85-.38 1.15-.74.3-.36.48-.81.52-1.27.04-.46 0-.93-.01-1.39V.02z"/>
+              </svg>
+            </a>
+            <div className="h-4 w-[1px] bg-slate-100 mx-2 hidden md:block"></div>
+            <div className="flex gap-6 text-slate-400 text-xs uppercase tracking-widest">
+              <a href="#" className="hover:text-gold transition-colors">Privacidade</a>
+              <a href="#" className="hover:text-gold transition-colors">Termos</a>
+            </div>
           </div>
         </div>
       </footer>
