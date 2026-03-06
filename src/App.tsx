@@ -556,7 +556,7 @@ export default function App() {
               <Linkedin className="w-5 h-5" />
             </a>
             <a 
-              href="https://www.tiktok.com/@user345865999643?_r=1&_t=ZS-94McoT18U7w" 
+              href="https://www.tiktok.com/@marina.arajo.advog?_r=1&_t=ZS-94TEvVjOUD7" 
               target="_blank" 
               rel="noopener noreferrer"
               className="text-slate-400 hover:text-gold transition-colors"
